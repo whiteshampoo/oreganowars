@@ -1,0 +1,31 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Buildings/Building.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Buildings/HQ/HQ.gd" type="Script" id=2]
+[ext_resource path="res://Buildings/HQ/scifiStructure_10.png" type="Texture" id=3]
+[ext_resource path="res://Buildings/SmallFactory/SmallFactory.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Buildings/Towers/MG_Tower_Tier_2.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Buildings/Towers/MG_Tower_Tier_1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Buildings/Towers/Cannon_Tower_Tier_2.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Buildings/OreganoRefinery/OreganoRefinery.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Buildings/Towers/Cannon_Tower_Tier_1.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Buildings/Towers/Rocket_Tower_Tier_2.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Buildings/BigFactory/BigFactory.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Buildings/Towers/Rocket_Tower_Tier_1.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Buildings/Wall/Wall.tscn" type="PackedScene" id=13]
+
+[node name="HQ" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+width = 2
+height = 2
+hitpoints_max = 5000.0
+price = 1700
+buttons_text = PoolStringArray( "Sell", "Repair", "Tech Update 1", "Tech Update 2", "Wall", "Oregano Refinery", "Small Factory", "Big Factory", "MG Tower Tier 1", "MG Tower Tier 2", "Cannon Tower Tier 1", "Cannon Tower Tier 2", "Rocket Tower Tier 1", "Rocket Tower Tier 2" )
+buttons_tech = PoolIntArray( 666, 0, 0, 1, 0, 0, 0, 1, 1, 2, 1, 2, 1, 2 )
+buttons_price = PoolIntArray( 0, 0, 500, 1000, 100, 1000, 700, 1400, 400, 800, 400, 800, 400, 800 )
+buttons_time = PoolRealArray( 0, 0, 45, 60, 5, 45, 30, 45, 20, 40, 20, 40, 20, 40 )
+buttons_spawn = [ null, null, null, null, ExtResource( 13 ), ExtResource( 8 ), ExtResource( 4 ), ExtResource( 11 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 9 ), ExtResource( 7 ), ExtResource( 12 ), ExtResource( 10 ) ]
+base_view_distance = 4
+
+[node name="Visual" parent="." index="0"]
+texture = ExtResource( 3 )

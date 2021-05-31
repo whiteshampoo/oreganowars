@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Buildings/Building.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Buildings/Wall/Wall.gd" type="Script" id=2]
+[ext_resource path="res://Buildings/Wall/towerDefense_tile180.png" type="Texture" id=3]
+
+[node name="Wall" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+hitpoints_max = 600.0
+buttons_tech = PoolIntArray( 0, 0, 1, 1 )
+
+[node name="Visual" parent="." index="0"]
+texture = ExtResource( 3 )

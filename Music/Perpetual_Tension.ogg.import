@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Perpetual_Tension.ogg-dc6c3df08533aa3fc05f51d9da6e0521.oggstr"
+
+[deps]
+
+source_file="res://Music/Perpetual_Tension.ogg"
+dest_files=[ "res://.import/Perpetual_Tension.ogg-dc6c3df08533aa3fc05f51d9da6e0521.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

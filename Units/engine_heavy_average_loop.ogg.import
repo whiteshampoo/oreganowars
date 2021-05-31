@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/engine_heavy_average_loop.ogg-185d8162873e38965f050e16b2a2b4fc.oggstr"
+
+[deps]
+
+source_file="res://Units/engine_heavy_average_loop.ogg"
+dest_files=[ "res://.import/engine_heavy_average_loop.ogg-185d8162873e38965f050e16b2a2b4fc.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

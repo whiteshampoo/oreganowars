@@ -1,0 +1,113 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Font_32.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Menu/Help.gd" type="Script" id=2]
+[ext_resource path="res://MapGenerator/MapGenerator.tscn" type="PackedScene" id=3]
+
+[node name="Credits" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MapGenerator" parent="." instance=ExtResource( 3 )]
+modulate = Color( 0.25098, 0.25098, 0.25098, 1 )
+position = Vector2( -32, -32 )
+scale = Vector2( 0.25, 0.25 )
+width = 64
+height = 36
+map_seed = 0
+players = 4
+
+[node name="Text" type="RichTextLabel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_right = -10.0
+custom_fonts/normal_font = ExtResource( 1 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+bbcode_enabled = true
+bbcode_text = "[center]
+
+Oregano Wars
+
+Credits
+
+Everything
+[url=https://whiteshampoo.itch.io]Benedikt Wicklein (whiteshampoo)[/url]
+
+Playtester
+Tatarantula
+Markus B.
+[url=https://theothetorch.itch.io/]Theo[/url]
+
+Graphics
+[url=http://kenney.nl]A lot - Kenney.nl[/url]
+Oregano - Tatarantula
+
+Sounds
+[url=https://opengameart.org/content/engine-loop-heavy-vehicletank]Motorsounds - Nayckron[/url]
+[url=https://opengameart.org/content/q009s-weapon-sounds]Shooting and Explosions - Q009[/url]
+[url=https://bckr.itch.io/sdap]Voice - Dillon Becker & Karen Cenon[/url]
+
+Music
+[url=https://opengameart.org/content/wind-run]Win Run - TAD[/url]
+[url=https://opengameart.org/content/wasteland-showdown-battle-music]Wasteland Showdown - Matthew Pablo[/url]
+[url=https://opengameart.org/content/perpetual-tension]Perpetual Tension - Zander Noriega[/url]
+[url=https://opengameart.org/content/aurora]Aurora - KLY[/url]
+[url=https://opengameart.org/content/artblock]Artblock - Jan125[/url]
+[url=https://opengameart.org/content/theodyssey]The Odyssey - Hitctrl[/url]
+[url=https://opengameart.org/content/the-war-over-a-melon-field-themes-and-jingles]The War Over A Melon Field - Spring[/url]
+
+[/center]"
+text = "
+
+Oregano Wars
+
+Credits
+
+Everything
+Benedikt Wicklein (whiteshampoo)
+
+Playtester
+Tatarantula
+Markus B.
+Theo
+
+Graphics
+A lot - Kenney.nl
+Oregano - Tatarantula
+
+Sounds
+Motorsounds - Nayckron
+Shooting and Explosions - Q009
+Voice - Dillon Becker & Karen Cenon
+
+Music
+Win Run - TAD
+Wasteland Showdown - Matthew Pablo
+Perpetual Tension - Zander Noriega
+Aurora - KLY
+Artblock - Jan125
+The Odyssey - Hitctrl
+The War Over A Melon Field - Spring
+
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back" type="Button" parent="."]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 20.0
+margin_bottom = 32.0
+custom_fonts/font = ExtResource( 1 )
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="meta_clicked" from="Text" to="." method="_on_Text_meta_clicked"]
+[connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]

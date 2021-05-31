@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Units/Barrels/Rocket/Rocket_Small.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Buildings/Towers/Tower.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Buildings/Towers/Rocket_Tower_Tier_1.gd" type="Script" id=3]
+
+[node name="Rocket_Tower_Tier_1" instance=ExtResource( 2 )]
+script = ExtResource( 3 )
+hitpoints_max = 300.0
+
+[node name="Rocket_Small" parent="." index="7" instance=ExtResource( 1 )]

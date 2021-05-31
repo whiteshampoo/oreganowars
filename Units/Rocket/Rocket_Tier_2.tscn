@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Units/Tank.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Units/Barrels/Rocket/Rocket_Big.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Units/Rocket/rocket.png" type="Texture" id=3]
+[ext_resource path="res://Units/Rocket/rocket_tracks.png" type="Texture" id=4]
+[ext_resource path="res://Units/engine_heavy_average_loop.ogg" type="AudioStream" id=5]
+
+[node name="Rocket_T1" instance=ExtResource( 1 )]
+type = "Rocket"
+hitpoints_max = 200.0
+travel_duration = 1.33
+rotation_duration = 1.33
+base_view_distance = 3
+sound_motor = ExtResource( 5 )
+
+[node name="Tracks" parent="." index="0"]
+texture = ExtResource( 4 )
+
+[node name="Body" parent="." index="1"]
+texture = ExtResource( 3 )
+
+[node name="DebugPath" parent="." index="6"]
+visible = true
+
+[node name="Rocket_Big" parent="." index="7" instance=ExtResource( 2 )]

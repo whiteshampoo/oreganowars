@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Buildings/Building.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Buildings/BigFactory/BigFactory.gd" type="Script" id=2]
+[ext_resource path="res://Units/Heavy/Heavy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Units/Medium/Medium.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Buildings/BigFactory/scifiStructure_05.png" type="Texture" id=5]
+
+[node name="BigFactory" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+width = 3
+height = 2
+hitpoints_max = 2000.0
+price = 1400
+buttons_text = PoolStringArray( "Sell", "Repair", "Tech Update 1", "Tech Update 2", "Medium Tank", "Heavy Tank" )
+buttons_tech = PoolIntArray( 0, 0, 0, 2, 0, 1 )
+buttons_price = PoolIntArray( 0, 0, 1000, 0, 600, 900 )
+buttons_time = PoolRealArray( 0, 0, 60, 0, 25, 35 )
+buttons_spawn = [ null, null, null, null, ExtResource( 4 ), ExtResource( 3 ) ]
+base_view_distance = 2
+
+[node name="Visual" parent="." index="0"]
+texture = ExtResource( 5 )

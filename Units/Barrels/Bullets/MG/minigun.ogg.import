@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/minigun.ogg-639fec6b000ee71f99e58cde9c5c2478.oggstr"
+
+[deps]
+
+source_file="res://Units/Barrels/Bullets/MG/minigun.ogg"
+dest_files=[ "res://.import/minigun.ogg-639fec6b000ee71f99e58cde9c5c2478.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

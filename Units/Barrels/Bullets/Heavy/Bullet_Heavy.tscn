@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Units/Barrels/Bullets/Bullet.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Units/Barrels/Bullets/Heavy/shotRed.png" type="Texture" id=2]
+[ext_resource path="res://Units/Barrels/Bullets/Heavy/ren.ogg" type="AudioStream" id=3]
+
+[node name="Bullet_Heavy" instance=ExtResource( 1 )]
+travel_time = 0.1
+damage = 60.0
+damage_scout = 2.0
+damage_rocket = 0.75
+sound_shoot = ExtResource( 3 )
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource( 2 )

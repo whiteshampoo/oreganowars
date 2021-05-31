@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Buildings/Building.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Buildings/OreganoRefinery/OreganoRefinery.gd" type="Script" id=2]
+[ext_resource path="res://Buildings/OreganoRefinery/scifiStructure_08.png" type="Texture" id=3]
+[ext_resource path="res://Units/Harvester/Harvester.tscn" type="PackedScene" id=4]
+
+[node name="OreganoRefinery" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+width = 3
+height = 2
+hitpoints_max = 2000.0
+buttons_text = PoolStringArray( "Sell", "Repair", "Tech Update 1", "Tech Update 2", "Harvester" )
+buttons_tech = PoolIntArray( 0, 0, 1, 1, 0 )
+buttons_price = PoolIntArray( 0, 0, 100, 200, 500 )
+buttons_time = PoolRealArray( 0, 0, 5, 10, 30 )
+buttons_spawn = [ null, null, null, null, ExtResource( 4 ) ]
+base_view_distance = 3
+
+[node name="Visual" parent="." index="0"]
+texture = ExtResource( 3 )

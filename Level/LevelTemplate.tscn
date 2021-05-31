@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://MapGenerator/MapGenerator.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Level/LevelTemplate.gd" type="Script" id=2]
+[ext_resource path="res://Level/GameCamera.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Tools/SelectionBox.tscn" type="PackedScene" id=5]
+[ext_resource path="res://AI/AI_Stupid.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Tiles/Fog.tres" type="TileSet" id=16]
+
+[node name="LevelTemplate" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="AI_Stupid_red" parent="." instance=ExtResource( 8 )]
+faction = "red"
+
+[node name="AI_Stupid_green" parent="." instance=ExtResource( 8 )]
+faction = "green"
+
+[node name="AI_Stupid_yellow" parent="." instance=ExtResource( 8 )]
+faction = "yellow"
+
+[node name="MapGenerator" parent="." instance=ExtResource( 1 )]
+show_behind_parent = true
+width = 1
+height = 1
+map_seed = 0
+
+[node name="Darkness" type="TileMap" parent="."]
+z_index = 2
+tile_set = ExtResource( 16 )
+format = 1
+
+[node name="FogOfWar_Buffer1" type="TileMap" parent="."]
+modulate = Color( 1, 1, 1, 0.501961 )
+z_index = 2
+tile_set = ExtResource( 16 )
+format = 1
+
+[node name="FogOfWar_Buffer2" type="TileMap" parent="."]
+modulate = Color( 1, 1, 1, 0.501961 )
+z_index = 2
+tile_set = ExtResource( 16 )
+format = 1
+
+[node name="GameCamera" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1248, 800 )
+
+[node name="SelectionBox" parent="." instance=ExtResource( 5 )]
+z_index = 10

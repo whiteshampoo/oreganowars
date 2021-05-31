@@ -1,0 +1,205 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Node2D",
+"class": "Barrel",
+"language": "GDScript",
+"path": "res://Units/Barrels/Barrel.gd"
+}, {
+"base": "Node2D",
+"class": "BigFactory",
+"language": "GDScript",
+"path": "res://Buildings/BigFactory/BigFactory.gd"
+}, {
+"base": "Node2D",
+"class": "Building",
+"language": "GDScript",
+"path": "res://Buildings/Building.gd"
+}, {
+"base": "Tower",
+"class": "CannonTowerTier1",
+"language": "GDScript",
+"path": "res://Buildings/Towers/Cannon_Tower_Tier_1.gd"
+}, {
+"base": "Tower",
+"class": "CannonTowerTier2",
+"language": "GDScript",
+"path": "res://Buildings/Towers/Cannon_Tower_Tier_2.gd"
+}, {
+"base": "Node2D",
+"class": "Harvester",
+"language": "GDScript",
+"path": "res://Units/Harvester/Harvester.gd"
+}, {
+"base": "Node2D",
+"class": "HeadQuarter",
+"language": "GDScript",
+"path": "res://Buildings/HQ/HQ.gd"
+}, {
+"base": "Tower",
+"class": "MGTowerTier1",
+"language": "GDScript",
+"path": "res://Buildings/Towers/MG_Tower_Tier_1.gd"
+}, {
+"base": "Tower",
+"class": "MGTowerTier2",
+"language": "GDScript",
+"path": "res://Buildings/Towers/MG_Tower_Tier_2.gd"
+}, {
+"base": "Node2D",
+"class": "MapGenerator",
+"language": "GDScript",
+"path": "res://MapGenerator/MapGenerator.gd"
+}, {
+"base": "Node2D",
+"class": "OreganoRefinery",
+"language": "GDScript",
+"path": "res://Buildings/OreganoRefinery/OreganoRefinery.gd"
+}, {
+"base": "Tower",
+"class": "RocketTowerTier1",
+"language": "GDScript",
+"path": "res://Buildings/Towers/Rocket_Tower_Tier_1.gd"
+}, {
+"base": "Tower",
+"class": "RocketTowerTier2",
+"language": "GDScript",
+"path": "res://Buildings/Towers/Rocket_Tower_Tier_2.gd"
+}, {
+"base": "Node2D",
+"class": "SmallFactory",
+"language": "GDScript",
+"path": "res://Buildings/SmallFactory/SmallFactory.gd"
+}, {
+"base": "Node2D",
+"class": "StupidAI",
+"language": "GDScript",
+"path": "res://AI/AI_Stupid.gd"
+}, {
+"base": "Node2D",
+"class": "Tower",
+"language": "GDScript",
+"path": "res://Buildings/Towers/Tower.gd"
+}, {
+"base": "Node2D",
+"class": "Unit",
+"language": "GDScript",
+"path": "res://Units/Unit.gd"
+}, {
+"base": "Node2D",
+"class": "Wall",
+"language": "GDScript",
+"path": "res://Buildings/Wall/Wall.gd"
+} ]
+_global_script_class_icons={
+"Barrel": "",
+"BigFactory": "",
+"Building": "",
+"CannonTowerTier1": "",
+"CannonTowerTier2": "",
+"Harvester": "",
+"HeadQuarter": "",
+"MGTowerTier1": "",
+"MGTowerTier2": "",
+"MapGenerator": "",
+"OreganoRefinery": "",
+"RocketTowerTier1": "",
+"RocketTowerTier2": "",
+"SmallFactory": "",
+"StupidAI": "",
+"Tower": "",
+"Unit": "",
+"Wall": ""
+}
+
+[application]
+
+config/name="Oregano Wars"
+run/main_scene="res://Intro/Intro.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+Global="*res://Global.gd"
+Log="*res://Log/Log.tscn"
+
+[display]
+
+window/size/width=960
+window/size/height=512
+
+[editor_plugins]
+
+enabled=PoolStringArray( "Autotiler" )
+
+[gui]
+
+theme/custom="res://Theme.tres"
+
+[input]
+
+ui_left={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777231,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":14,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":65,"unicode":0,"echo":false,"script":null)
+ ]
+}
+ui_right={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777233,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":15,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":68,"unicode":0,"echo":false,"script":null)
+ ]
+}
+ui_up={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777232,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":12,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":87,"unicode":0,"echo":false,"script":null)
+ ]
+}
+ui_down={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777234,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":13,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":83,"unicode":0,"echo":false,"script":null)
+ ]
+}
+ui_fast={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777237,"unicode":0,"echo":false,"script":null)
+ ]
+}
+zoom_in={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":82,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777235,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777349,"unicode":0,"echo":false,"script":null)
+ ]
+}
+zoom_out={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":70,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777236,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777347,"unicode":0,"echo":false,"script":null)
+ ]
+}
+
+[rendering]
+
+quality/driver/driver_name="GLES2"
+quality/intended_usage/framebuffer_allocation=0
+quality/intended_usage/framebuffer_allocation.mobile=0
+2d/snapping/use_gpu_pixel_snap=true
+environment/default_environment="res://default_env.tres"
+quality/2d/use_nvidia_rect_flicker_workaround=true
+quality/2d/use_pixel_snap=true

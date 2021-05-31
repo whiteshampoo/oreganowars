@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/artblock.ogg-a770ecc6aea50674b2aab3e387e1c98c.oggstr"
+
+[deps]
+
+source_file="res://Music/artblock.ogg"
+dest_files=[ "res://.import/artblock.ogg-a770ecc6aea50674b2aab3e387e1c98c.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

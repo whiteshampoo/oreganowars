@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Units/Barrels/Bullets/Bullet.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Units/Barrels/Bullets/MG/shotThin.png" type="Texture" id=2]
+[ext_resource path="res://Units/Barrels/Bullets/MG/minigun.ogg" type="AudioStream" id=3]
+
+[node name="Bullet_MG" instance=ExtResource( 1 )]
+position = Vector2( -1.33484, -1.33484 )
+travel_time = 0.05
+damage = 2.5
+damage_tank = 0.5
+damage_scout = 1.0
+damage_rocket = 3.0
+sound_shoot = ExtResource( 3 )
+sound_shoot_db = -20.0
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource( 2 )

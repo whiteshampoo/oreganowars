@@ -1,0 +1,2 @@
+extends Tower
+class_name RocketTowerTier1

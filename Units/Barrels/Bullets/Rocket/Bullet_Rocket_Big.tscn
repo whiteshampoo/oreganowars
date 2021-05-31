@@ -1,0 +1,20 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Units/Barrels/Bullets/Bullet.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Units/Barrels/Rocket/rocket_big.png" type="Texture" id=2]
+[ext_resource path="res://Tools/Explosion/Explosion.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Units/explosion.ogg" type="AudioStream" id=4]
+[ext_resource path="res://Units/Barrels/Bullets/Rocket/rlauncher.ogg" type="AudioStream" id=5]
+
+[node name="Bullet_Rocket_Big" instance=ExtResource( 1 )]
+travel_time = 0.4
+damage = 262.5
+damage_tank = 2.0
+damage_scout = 0.25
+rocket = true
+sound_shoot = ExtResource( 5 )
+Explosion = ExtResource( 3 )
+sound_explosion = ExtResource( 4 )
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource( 2 )

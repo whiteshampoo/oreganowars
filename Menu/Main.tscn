@@ -1,0 +1,324 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Menu/Main.gd" type="Script" id=1]
+[ext_resource path="res://Font_32.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Font_12.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Theme.tres" type="Theme" id=4]
+[ext_resource path="res://MapGenerator/MapGenerator.tscn" type="PackedScene" id=5]
+
+[node name="Main" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 4 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MapGenerator" parent="." instance=ExtResource( 5 )]
+modulate = Color( 0.25098, 0.25098, 0.25098, 1 )
+position = Vector2( -32, -32 )
+scale = Vector2( 0.25, 0.25 )
+width = 64
+height = 36
+map_seed = 0
+players = 0
+
+[node name="Container" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -236.5
+margin_top = -256.0
+margin_right = 236.5
+margin_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_stretch_ratio = 0.5
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Spacer2" type="Control" parent="Container"]
+margin_right = 473.0
+margin_bottom = 43.0
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Campaign" type="Button" parent="Container"]
+margin_top = 47.0
+margin_right = 473.0
+margin_bottom = 90.0
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+disabled = true
+text = "Campaign"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Skirmish" type="Button" parent="Container"]
+margin_top = 94.0
+margin_right = 473.0
+margin_bottom = 137.0
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+text = "Skirmish"
+
+[node name="SkirmishOptions" type="HBoxContainer" parent="Container"]
+margin_top = 141.0
+margin_right = 473.0
+margin_bottom = 159.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MapLabel" type="Label" parent="Container/SkirmishOptions"]
+margin_top = 3.0
+margin_right = 51.0
+margin_bottom = 15.0
+size_flags_horizontal = 3
+text = "Mapsize:"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MapSize" type="SpinBox" parent="Container/SkirmishOptions"]
+margin_left = 55.0
+margin_right = 111.0
+margin_bottom = 18.0
+min_value = 64.0
+max_value = 256.0
+step = 32.0
+value = 96.0
+rounded = true
+prefix = "   "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EnemyLabel" type="Label" parent="Container/SkirmishOptions"]
+margin_left = 115.0
+margin_top = 3.0
+margin_right = 166.0
+margin_bottom = 15.0
+size_flags_horizontal = 3
+text = "Enemies:"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Enemies" type="SpinBox" parent="Container/SkirmishOptions"]
+margin_left = 170.0
+margin_right = 226.0
+margin_bottom = 18.0
+min_value = 1.0
+max_value = 3.0
+value = 3.0
+rounded = true
+prefix = "    "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Spacer" type="Control" parent="Container/SkirmishOptions"]
+margin_left = 230.0
+margin_right = 255.0
+margin_bottom = 18.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Darkness" type="CheckBox" parent="Container/SkirmishOptions"]
+margin_left = 259.0
+margin_right = 330.0
+margin_bottom = 18.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 3 )
+pressed = true
+text = "Darkness"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Spacer2" type="Control" parent="Container/SkirmishOptions"]
+margin_left = 334.0
+margin_right = 360.0
+margin_bottom = 18.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FogOfWar" type="CheckBox" parent="Container/SkirmishOptions"]
+margin_left = 364.0
+margin_right = 443.0
+margin_bottom = 18.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 3 )
+pressed = true
+text = "Fog Of War"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Spacer3" type="Control" parent="Container/SkirmishOptions"]
+margin_left = 447.0
+margin_right = 473.0
+margin_bottom = 18.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VolumeOptions" type="HBoxContainer" parent="Container"]
+margin_top = 163.0
+margin_right = 473.0
+margin_bottom = 181.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Spacer4" type="Control" parent="Container/VolumeOptions"]
+margin_right = 117.0
+margin_bottom = 18.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Music" type="CheckBox" parent="Container/VolumeOptions"]
+margin_left = 121.0
+margin_right = 172.0
+margin_bottom = 18.0
+custom_fonts/font = ExtResource( 3 )
+pressed = true
+text = "Music"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Spacer5" type="Control" parent="Container/VolumeOptions"]
+margin_left = 176.0
+margin_right = 294.0
+margin_bottom = 18.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sound" type="CheckBox" parent="Container/VolumeOptions"]
+margin_left = 298.0
+margin_right = 351.0
+margin_bottom = 18.0
+custom_fonts/font = ExtResource( 3 )
+pressed = true
+text = "Sound"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Spacer6" type="Control" parent="Container/VolumeOptions"]
+margin_left = 355.0
+margin_right = 473.0
+margin_bottom = 18.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Load" type="Button" parent="Container"]
+visible = false
+margin_top = 181.0
+margin_right = 481.0
+margin_bottom = 219.0
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+text = "Load"
+
+[node name="HowToPlay" type="Button" parent="Container"]
+margin_top = 185.0
+margin_right = 473.0
+margin_bottom = 228.0
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+text = "How To Play"
+
+[node name="Credits" type="Button" parent="Container"]
+margin_top = 232.0
+margin_right = 473.0
+margin_bottom = 276.0
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+text = "Credits"
+
+[node name="Itch" type="Button" parent="Container"]
+margin_top = 280.0
+margin_right = 473.0
+margin_bottom = 323.0
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+text = "Oregano Wars on itch.io"
+
+[node name="Godot Wild Jam" type="Button" parent="Container"]
+margin_top = 327.0
+margin_right = 473.0
+margin_bottom = 370.0
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+text = "Godot Wild Jam #31"
+
+[node name="Godot Engine" type="Button" parent="Container"]
+margin_top = 374.0
+margin_right = 473.0
+margin_bottom = 417.0
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+text = "Godot Engine"
+
+[node name="Exit" type="Button" parent="Container"]
+margin_top = 421.0
+margin_right = 473.0
+margin_bottom = 464.0
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+text = "Exit"
+
+[node name="Spacer3" type="Control" parent="Container"]
+margin_top = 468.0
+margin_right = 473.0
+margin_bottom = 512.0
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Container/Campaign" to="." method="_on_Campaign_pressed"]
+[connection signal="pressed" from="Container/Skirmish" to="." method="_on_Skirmish_pressed"]
+[connection signal="value_changed" from="Container/SkirmishOptions/MapSize" to="." method="_on_MapSize_value_changed"]
+[connection signal="value_changed" from="Container/SkirmishOptions/Enemies" to="." method="_on_Enemies_value_changed"]
+[connection signal="toggled" from="Container/SkirmishOptions/Darkness" to="." method="_on_Darkness_toggled"]
+[connection signal="toggled" from="Container/SkirmishOptions/FogOfWar" to="." method="_on_FogOfWar_toggled"]
+[connection signal="toggled" from="Container/VolumeOptions/Music" to="." method="_on_Music_toggled"]
+[connection signal="toggled" from="Container/VolumeOptions/Sound" to="." method="_on_Sound_toggled"]
+[connection signal="pressed" from="Container/Load" to="." method="_on_Load_pressed"]
+[connection signal="pressed" from="Container/HowToPlay" to="." method="_on_HowToPlay_pressed"]
+[connection signal="pressed" from="Container/Credits" to="." method="_on_Credits_pressed"]
+[connection signal="pressed" from="Container/Itch" to="." method="_on_Itch_pressed"]
+[connection signal="pressed" from="Container/Godot Wild Jam" to="." method="_on_Godot_Wild_Jam_pressed"]
+[connection signal="pressed" from="Container/Godot Engine" to="." method="_on_Godot_Engine_pressed"]
+[connection signal="pressed" from="Container/Exit" to="." method="_on_Exit_pressed"]

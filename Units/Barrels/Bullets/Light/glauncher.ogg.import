@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/glauncher.ogg-3bcffc3ea5e3dd656180eeeeaf3b46d1.oggstr"
+
+[deps]
+
+source_file="res://Units/Barrels/Bullets/Light/glauncher.ogg"
+dest_files=[ "res://.import/glauncher.ogg-3bcffc3ea5e3dd656180eeeeaf3b46d1.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

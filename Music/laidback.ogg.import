@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/laidback.ogg-5d21b710027e0b1507875ab7d83ef95f.oggstr"
+
+[deps]
+
+source_file="res://Music/laidback.ogg"
+dest_files=[ "res://.import/laidback.ogg-5d21b710027e0b1507875ab7d83ef95f.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

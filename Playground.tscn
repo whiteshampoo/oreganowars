@@ -1,0 +1,106 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "
+# +------------------------------------------------------+
+# |                                                      |
+# | Written by Benedikt Wicklein aka whiteshampoo - 2021 | 
+# |                                                      |
+# |               License: CC BY-NC-SA 4.0               |
+# |  https://creativecommons.org/licenses/by-nc-sa/4.0/  |
+# |                                                      |
+# +------------------------------------------------------+
+
+
+extends Node2D
+
+#-[CONSTANTS]---------------------------------------------------------------------
+
+
+
+#-[SIGNALS]---------------------------------------------------------------------
+
+
+
+#-[EXPORT]----------------------------------------------------------------------
+
+
+
+#-[ONREADY]---------------------------------------------------------------------
+
+onready var T : Tween = $Tween
+onready var L : Line2D = $Line2D
+
+#-[VAR]-------------------------------------------------------------------------
+
+
+
+#-[SETGET METHODS]--------------------------------------------------------------
+
+
+
+#-[BUILTIN GODOT METHODS]-------------------------------------------------------
+
+func _ready() -> void:
+	var x : Array = range(3, 6)
+	x.invert()
+	for i in x:
+		print(i)
+
+
+func _process(_delta : float) -> void:
+	pass
+
+
+func _physics_process(_delta : float) -> void:
+	pass
+
+
+func _input(event : InputEvent) -> void:
+	if event is InputEventMouseButton:
+		if event.pressed and event.button_index == BUTTON_LEFT:
+			# get needed angle
+			var rot : float = rad2deg(L.position.angle_to_point(event.position))
+			# make sure everything is between 0 - 360 degrees
+			L.rotation_degrees = wrapf(L.rotation_degrees, 0.0, 360.0)
+			rot = wrapf(rot, 0.0, 360.0)
+			# stuff i can't explain, but makes sense after some time at the whiteboard...
+			if abs(rot - L.rotation_degrees) > 180.0:
+				rot -= 360.0 * sign(rot - L.rotation_degrees)
+
+			T.interpolate_property(L, \"rotation_degrees\", null,
+										rot,
+										0.5,Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
+			T.start()
+
+
+func _unhandled_input(_event : InputEvent) -> void:
+	pass
+
+
+func _unhandled_key_input(_event : InputEventKey) -> void:
+	pass
+
+
+func _draw() -> void:
+	pass
+
+#-[INHERITED METHODS]-----------------------------------------------------------
+
+
+
+#-[OWN METHODS]-----------------------------------------------------------------
+
+
+
+#-[SIGNAL METHODS]--------------------------------------------------------------
+"
+
+[node name="Playground" type="Node2D"]
+script = SubResource( 1 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2( 480, 256 )
+points = PoolVector2Array( 0, 0, -100, 0 )

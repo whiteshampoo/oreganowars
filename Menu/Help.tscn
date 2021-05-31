@@ -1,0 +1,104 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Font_32.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Menu/Help.gd" type="Script" id=2]
+[ext_resource path="res://MapGenerator/MapGenerator.tscn" type="PackedScene" id=3]
+
+[node name="Help" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MapGenerator" parent="." instance=ExtResource( 3 )]
+modulate = Color( 0.25098, 0.25098, 0.25098, 1 )
+position = Vector2( -32, -32 )
+scale = Vector2( 0.25, 0.25 )
+width = 64
+height = 36
+map_seed = 0
+players = 0
+
+[node name="Text" type="RichTextLabel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 100.0
+margin_right = -10.0
+custom_fonts/normal_font = ExtResource( 1 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+bbcode_enabled = true
+bbcode_text = "[center]
+
+OREGANO WARS TUTORIAL
+
+In this game your goal is to destroy all your foes without being destroyed yourself while farming delicious OREGANO.
+To get some money you have to harvest OREGANO.
+With your money you can buy buildings and shiny new tanks to defend your OREGANO and base as well as join the fight.
+
+BASIC CONTROLLS
+
+Click on a building or unit to choose it. You can mark multiple units by dragging over them with your stylus.
+
+On the right hand side you find a context menu for marked units or buildings. Only one action can be taken at a time. You‘ll also find a mini map there. You can click on it to change areas or send marked units away by right clicking on the map. You can zoom by either use of the scroll wheel, pressing „R“ and „F“ or „+“ and „-“. The field of view can also be shiftet either by pressing the scroll wheel, by use of the arrow buttons or „WASD“.
+
+BUILDINGS
+
+The most important building is your headquarters. It serves as factory for other buildings. Better don‘t let it be destroyed. You can built factories and defense towers there and buy some upgrades.
+
+You can build small factories for basic tanks and big factories for more gigantic ones.
+There‘s also the farm for OREGANO gathering.
+Damaged buildings can be repaired.
+
+BATTLE
+
+Different units have different speeds. Scout tiers are fastest with most field of view but relatively weak while bigger tanks move more slowly but deal more damage.
+
+The basic cycle of combat is: scout beats rocket, rocket beats tank, tank beats scout.
+
+As soon as your tank or tower is close enough to an enemy to shoot it, it starts targeting automatically. Mind that some weapons turn around slowly than others. Once you have given an order, your units will fullfill it till you either order otherwise or the order is fullfilled. If enemies are close they will be shot till they are gone.[/center]"
+text = "
+
+OREGANO WARS TUTORIAL
+
+In this game your goal is to destroy all your foes without being destroyed yourself while farming delicious OREGANO.
+To get some money you have to harvest OREGANO.
+With your money you can buy buildings and shiny new tanks to defend your OREGANO and base as well as join the fight.
+
+BASIC CONTROLLS
+
+Click on a building or unit to choose it. You can mark multiple units by dragging over them with your stylus.
+
+On the right hand side you find a context menu for marked units or buildings. Only one action can be taken at a time. You‘ll also find a mini map there. You can click on it to change areas or send marked units away by right clicking on the map. You can zoom by either use of the scroll wheel, pressing „R“ and „F“ or „+“ and „-“. The field of view can also be shiftet either by pressing the scroll wheel, by use of the arrow buttons or „WASD“.
+
+BUILDINGS
+
+The most important building is your headquarters. It serves as factory for other buildings. Better don‘t let it be destroyed. You can built factories and defense towers there and buy some upgrades.
+
+You can build small factories for basic tanks and big factories for more gigantic ones.
+There‘s also the farm for OREGANO gathering.
+Damaged buildings can be repaired.
+
+BATTLE
+
+Different units have different speeds. Scout tiers are fastest with most field of view but relatively weak while bigger tanks move more slowly but deal more damage.
+
+The basic cycle of combat is: scout beats rocket, rocket beats tank, tank beats scout.
+
+As soon as your tank or tower is close enough to an enemy to shoot it, it starts targeting automatically. Mind that some weapons turn around slowly than others. Once you have given an order, your units will fullfill it till you either order otherwise or the order is fullfilled. If enemies are close they will be shot till they are gone."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back" type="Button" parent="."]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 20.0
+margin_bottom = 32.0
+custom_fonts/font = ExtResource( 1 )
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/tech_ready.wav-d8d1ec36cf80348c9ae7544fdbcd9121.sample"
+
+[deps]
+
+source_file="res://Buildings/tech_ready.wav"
+dest_files=[ "res://.import/tech_ready.wav-d8d1ec36cf80348c9ae7544fdbcd9121.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,230 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Level/LevelTemplate.tscn" type="PackedScene" id=1]
+[ext_resource path="res://InGame.gd" type="Script" id=2]
+[ext_resource path="res://Font_32.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Theme.tres" type="Theme" id=4]
+[ext_resource path="res://Font_96.tres" type="DynamicFont" id=5]
+
+[sub_resource type="ImageTexture" id=1]
+flags = 0
+flags = 0
+
+[sub_resource type="ImageTexture" id=2]
+flags = 0
+flags = 0
+
+[sub_resource type="ImageTexture" id=3]
+flags = 0
+flags = 0
+
+[sub_resource type="ImageTexture" id=4]
+flags = 0
+flags = 0
+
+[sub_resource type="ImageTexture" id=5]
+flags = 0
+flags = 0
+
+[node name="InGame" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 4 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Splitter" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Game" type="ViewportContainer" parent="Splitter"]
+margin_right = 688.0
+margin_bottom = 512.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="Splitter/Game"]
+pause_mode = 1
+size = Vector2( 688, 512 )
+handle_input_locally = false
+usage = 0
+render_target_update_mode = 3
+physics_object_picking = true
+
+[node name="LevelTemplate" parent="Splitter/Game/Viewport" instance=ExtResource( 1 )]
+width = 96
+height = 96
+
+[node name="Sidebar" type="VBoxContainer" parent="Splitter"]
+margin_left = 692.0
+margin_right = 960.0
+margin_bottom = 512.0
+
+[node name="UnitControl2" type="Control" parent="Splitter/Sidebar"]
+margin_right = 268.0
+margin_bottom = 256.0
+rect_min_size = Vector2( 256, 256 )
+
+[node name="ColorRect" type="ColorRect" parent="Splitter/Sidebar/UnitControl2"]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 256, 256 )
+color = Color( 1, 0, 1, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Minimap" type="TextureRect" parent="Splitter/Sidebar/UnitControl2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 256, 256 )
+texture = SubResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MinimapOregano" type="TextureRect" parent="Splitter/Sidebar/UnitControl2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 256, 256 )
+texture = SubResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MinimapOverlay" type="TextureRect" parent="Splitter/Sidebar/UnitControl2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 256, 256 )
+texture = SubResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FogOfWarOverlay" type="TextureRect" parent="Splitter/Sidebar/UnitControl2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 256, 256 )
+texture = SubResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DarknessOverlay" type="TextureRect" parent="Splitter/Sidebar/UnitControl2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 256, 256 )
+texture = SubResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreditsBG" type="NinePatchRect" parent="Splitter/Sidebar"]
+margin_top = 260.0
+margin_right = 268.0
+margin_bottom = 284.0
+rect_min_size = Vector2( 256, 24 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Credits" type="Label" parent="Splitter/Sidebar/CreditsBG"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -0.840881
+margin_bottom = -0.840881
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Oregano: 421337"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UnitControl" type="ScrollContainer" parent="Splitter/Sidebar"]
+margin_top = 288.0
+margin_right = 268.0
+margin_bottom = 512.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+scroll_horizontal_enabled = false
+
+[node name="Container" type="VBoxContainer" parent="Splitter/Sidebar/UnitControl"]
+margin_right = 256.0
+margin_bottom = 250.0
+rect_min_size = Vector2( 256, 250 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Menu" type="VBoxContainer" parent="Splitter/Sidebar/UnitControl"]
+visible = false
+margin_right = 256.0
+margin_bottom = 250.0
+rect_min_size = Vector2( 256, 250 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Exit" type="Button" parent="Splitter/Sidebar/UnitControl/Menu"]
+margin_right = 256.0
+margin_bottom = 34.0
+custom_fonts/font = ExtResource( 3 )
+text = "Exit"
+
+[node name="Save" type="Button" parent="Splitter/Sidebar/UnitControl/Menu"]
+visible = false
+margin_top = 24.0
+margin_right = 256.0
+margin_bottom = 44.0
+
+[node name="Music" type="CheckBox" parent="Splitter/Sidebar/UnitControl/Menu"]
+margin_top = 38.0
+margin_right = 256.0
+margin_bottom = 62.0
+custom_fonts/font = ExtResource( 3 )
+text = "Music"
+
+[node name="Sound" type="CheckBox" parent="Splitter/Sidebar/UnitControl/Menu"]
+margin_top = 66.0
+margin_right = 256.0
+margin_bottom = 90.0
+custom_fonts/font = ExtResource( 3 )
+text = "Sound"
+
+[node name="TestStatus" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[node name="Status" type="Label" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 5 )
+text = "VICTORY"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Splitter/Sidebar/UnitControl/Menu/Exit" to="." method="_on_Exit_pressed"]
+[connection signal="pressed" from="Splitter/Sidebar/UnitControl/Menu/Save" to="." method="_on_Save_pressed"]
+[connection signal="toggled" from="Splitter/Sidebar/UnitControl/Menu/Music" to="." method="_on_Music_toggled"]
+[connection signal="toggled" from="Splitter/Sidebar/UnitControl/Menu/Sound" to="." method="_on_Sound_toggled"]
+[connection signal="timeout" from="TestStatus" to="." method="_on_TestStatus_timeout"]

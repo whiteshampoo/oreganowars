@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Units/Tank.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Units/Barrels/Heavy/Heavy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Units/Medium/medium_tracks.png" type="Texture" id=3]
+[ext_resource path="res://Units/Medium/medium.png" type="Texture" id=4]
+[ext_resource path="res://Units/engine_heavy_slow_loop.ogg" type="AudioStream" id=5]
+
+[node name="Medium" instance=ExtResource( 1 )]
+type = "Tank"
+hitpoints_max = 450.0
+travel_duration = 1.25
+rotation_duration = 1.25
+base_view_distance = 2
+sound_motor = ExtResource( 5 )
+
+[node name="Tracks" parent="." index="0"]
+texture = ExtResource( 3 )
+
+[node name="Body" parent="." index="1"]
+texture = ExtResource( 4 )
+
+[node name="DebugPath" parent="." index="6"]
+visible = true
+
+[node name="Heavy" parent="." index="7" instance=ExtResource( 2 )]

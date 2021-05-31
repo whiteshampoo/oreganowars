@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Aurora.ogg-86515617b572a202291d6d489aa57f12.oggstr"
+
+[deps]
+
+source_file="res://Music/Aurora.ogg"
+dest_files=[ "res://.import/Aurora.ogg-86515617b572a202291d6d489aa57f12.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Units/Barrels/Barrel.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Units/Barrels/Bullets/Rocket/Bullet_Rocket_Small.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Units/Barrels/Rocket/rocket_small.png" type="Texture" id=3]
+
+[node name="Rocket_Small" instance=ExtResource( 1 )]
+reload_time = 5.0
+turn_speed = 50.0
+range_radius = 10.0
+bullet_scene = ExtResource( 2 )
+
+[node name="Visual" parent="." index="0"]
+texture = ExtResource( 3 )
+
+[node name="1" type="Position2D" parent="BarrelEnds" index="0"]

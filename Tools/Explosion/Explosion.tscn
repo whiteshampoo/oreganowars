@@ -1,0 +1,25 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Tools/Explosion/explosion5.png" type="Texture" id=1]
+[ext_resource path="res://Tools/Explosion/explosion2.png" type="Texture" id=2]
+[ext_resource path="res://Tools/Explosion/explosion4.png" type="Texture" id=3]
+[ext_resource path="res://Tools/Explosion/explosion1.png" type="Texture" id=4]
+[ext_resource path="res://Tools/Explosion/Explosion.gd" type="Script" id=5]
+[ext_resource path="res://Tools/Explosion/explosion3.png" type="Texture" id=6]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 2 ), ExtResource( 6 ), ExtResource( 3 ), ExtResource( 1 ) ],
+"loop": false,
+"name": "default",
+"speed": 10.0
+} ]
+
+[node name="Explosion" type="Node2D" groups=[
+"Explosion",
+]]
+script = ExtResource( 5 )
+
+[node name="Visual" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+[connection signal="animation_finished" from="Visual" to="." method="_on_Visual_animation_finished"]

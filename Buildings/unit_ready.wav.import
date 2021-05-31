@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/unit_ready.wav-5b56418cc2d6e11afacfe9e7bf03f893.sample"
+
+[deps]
+
+source_file="res://Buildings/unit_ready.wav"
+dest_files=[ "res://.import/unit_ready.wav-5b56418cc2d6e11afacfe9e7bf03f893.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

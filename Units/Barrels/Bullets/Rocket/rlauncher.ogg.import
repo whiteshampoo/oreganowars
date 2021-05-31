@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/rlauncher.ogg-f7abcdd3311b4715c93774033ac02a61.oggstr"
+
+[deps]
+
+source_file="res://Units/Barrels/Bullets/Rocket/rlauncher.ogg"
+dest_files=[ "res://.import/rlauncher.ogg-f7abcdd3311b4715c93774033ac02a61.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

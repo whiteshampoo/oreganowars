@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Units/Tank.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Units/Harvester/Harvester.gd" type="Script" id=2]
+[ext_resource path="res://Tools/Smoker/smoke.png" type="Texture" id=3]
+[ext_resource path="res://Units/engine_heavy_slow_loop.ogg" type="AudioStream" id=4]
+[ext_resource path="res://Units/Harvester/harvester.png" type="Texture" id=5]
+[ext_resource path="res://Units/Harvester/harvester_tracks.png" type="Texture" id=6]
+[ext_resource path="res://Units/Barrels/Barrel.tscn" type="PackedScene" id=7]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0, 0.5, 1 )
+colors = PoolColorArray( 0, 0.501961, 0, 0, 0, 0.501961, 0, 0.501961, 0, 0.501961, 0, 0 )
+
+[node name="Harvester" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+type = "Harvester"
+hitpoints_max = 500.0
+travel_duration = 0.5
+rotation_duration = 0.5
+base_view_distance = 2
+sound_motor = ExtResource( 4 )
+
+[node name="Tracks" parent="." index="0"]
+texture = ExtResource( 6 )
+
+[node name="Body" parent="." index="1"]
+texture = ExtResource( 5 )
+
+[node name="Fill" type="Polygon2D" parent="." index="2"]
+position = Vector2( -0.5, -0.5 )
+color = Color( 0, 1, 0, 0.25098 )
+antialiased = true
+polygon = PoolVector2Array( 17, -6, 17, -6, 17, 6, 17, 6 )
+
+[node name="Harvesting" type="CPUParticles2D" parent="." index="12"]
+emitting = false
+local_coords = false
+texture = ExtResource( 3 )
+emission_shape = 1
+emission_sphere_radius = 32.0
+spread = 180.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 20.0
+initial_velocity_random = 1.0
+angle = 720.0
+angle_random = 1.0
+scale_amount = 0.5
+scale_amount_random = 0.5
+color_ramp = SubResource( 1 )
+
+[node name="NoRefinery" type="Timer" parent="." index="13"]
+wait_time = 5.0
+one_shot = true
+
+[node name="Barrel" parent="." index="14" instance=ExtResource( 7 )]

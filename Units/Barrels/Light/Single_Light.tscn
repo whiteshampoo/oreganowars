@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Units/Barrels/Barrel.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Units/Barrels/Bullets/Medium/Bullet_Medium.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Units/Barrels/Light/single_light.png" type="Texture" id=3]
+
+[node name="Single_Light" instance=ExtResource( 1 )]
+reload_time = 0.7
+turn_speed = 80.0
+range_radius = 6.0
+bullet_scene = ExtResource( 2 )
+
+[node name="Visual" parent="." index="0"]
+texture = ExtResource( 3 )
+offset = Vector2( 0, -8 )
+
+[node name="1" type="Position2D" parent="BarrelEnds" index="0"]
+position = Vector2( -32, 0 )
